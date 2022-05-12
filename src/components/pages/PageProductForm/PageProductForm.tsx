@@ -78,7 +78,7 @@ const Form = (props: FormikProps<FormikValues>) => {
             required
           />
         </Grid>
-        <Grid item container xs={12} justify="space-between">
+        <Grid item container xs={12} justifyContent="space-between">
           <Button
             color="primary"
           >

@@ -83,7 +83,7 @@ const Form = (props: FormikProps<FormikValues>) => {
             multiline
           />
         </Grid>
-        <Grid item container xs={12} justify="space-between">
+        <Grid item container xs={12} justifyContent="space-between">
           <Button
             type="submit"
             variant="contained"
