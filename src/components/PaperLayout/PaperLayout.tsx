@@ -1,8 +1,8 @@
-import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+import React from 'react'
+import {makeStyles} from '@material-ui/core/styles'
+import Paper from '@material-ui/core/Paper'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   layout: {
     width: 'auto',
     marginLeft: theme.spacing(2),
@@ -23,18 +23,16 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(3),
     },
   },
-}));
+}))
 
-const PaperLayout:React.FC = ({children}) =>  {
-  const classes = useStyles();
+const PaperLayout: React.FC = ({children}) => {
+  const classes = useStyles()
 
   return (
     <div className={classes.layout}>
-      <Paper className={classes.paper}>
-        {children}
-      </Paper>
+      <Paper className={classes.paper}>{children}</Paper>
     </div>
-  );
-};
+  )
+}
 
-export default PaperLayout;
+export default PaperLayout

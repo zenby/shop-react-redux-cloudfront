@@ -5,7 +5,7 @@ export const ORDER_STATUS = {
   sent: 'sent',
   completed: 'completed',
   cancelled: 'cancelled',
-};
+}
 
 export const ORDER_STATUS_FLOW = [
   ORDER_STATUS.open,
@@ -14,4 +14,4 @@ export const ORDER_STATUS_FLOW = [
   ORDER_STATUS.sent,
   ORDER_STATUS.completed,
   ORDER_STATUS.cancelled,
-];
+]
