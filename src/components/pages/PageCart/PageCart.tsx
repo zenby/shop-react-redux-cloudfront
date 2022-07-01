@@ -94,7 +94,7 @@ export default function PageCart() {
     setActiveStep(activeStep + 1)
     if (activeStep === 2) {
       const formattedValues = OrderSchema.cast({
-        items: cartItems.map(i => ({productId: i.product.id, count: i.count})),
+        items: cartItems.map(i => ({productId: i.product.id, amount: i.amount})),
         address,
       })
       axios.put(`${API_PATHS.order}/order`, formattedValues).then(() => {

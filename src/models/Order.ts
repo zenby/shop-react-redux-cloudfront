@@ -11,7 +11,7 @@ export type Address = Yup.InferType<typeof AddressSchema>
 
 export const OrderItemSchema = Yup.object({
   productId: Yup.string().required(),
-  count: Yup.number().integer().positive().required(),
+  amount: Yup.number().integer().positive().required(),
 }).defined()
 
 export type OrderItem = Yup.InferType<typeof OrderItemSchema>
