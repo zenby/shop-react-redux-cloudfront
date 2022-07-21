@@ -4,7 +4,7 @@ import {decrement, increment, incrementByAmount, incrementAsync, selectCount} fr
 import styles from './Counter.module.css'
 
 export function Counter() {
-  const count = useSelector(selectCount)
+  const amount = useSelector(selectCount)
   const dispatch = useDispatch()
   const [incrementAmount, setIncrementAmount] = useState('2')
 
@@ -14,7 +14,7 @@ export function Counter() {
         <button className={styles.button} aria-label="Increment value" onClick={() => dispatch(increment())}>
           +
         </button>
-        <span className={styles.value}>{count}</span>
+        <span className={styles.value}>{amount}</span>
         <button className={styles.button} aria-label="Decrement value" onClick={() => dispatch(decrement())}>
           -
         </button>
