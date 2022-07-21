@@ -30,7 +30,7 @@ export default function Orders() {
         <TableHead>
           <TableRow>
             <TableCell>From</TableCell>
-            <TableCell align="right">Items count</TableCell>
+            <TableCell align="right">Items amount</TableCell>
             <TableCell align="right">Address</TableCell>
             <TableCell align="right">Status</TableCell>
             <TableCell align="right">Action</TableCell>

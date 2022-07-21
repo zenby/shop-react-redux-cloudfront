@@ -46,12 +46,12 @@ const Form = (props: FormikProps<FormikValues>) => {
   } = props
   let helperText = ''
   if (values.status === ORDER_STATUS.approved) {
-    helperText = 'Setting status to APPROVED will decrease products count from stock!!!'
+    helperText = 'Setting status to APPROVED will decrease products amount from stock!!!'
   }
   // TODO add check if status was changed from approved to cancelled
-  //  to increase product count back again
+  //  to increase product amount back again
   // if ((values.status) === ORDER_STATUS.cancelled) {
-  //   helperText = 'Setting status to CANCELLED will increase products count in stock!!!';
+  //   helperText = 'Setting status to CANCELLED will increase products amount in stock!!!';
   // }
 
   return (
@@ -98,7 +98,7 @@ export default function PageOrder() {
     Promise.all(promises).then(([{data: products}, {data: order}]) => {
       const cartItems: CartItem[] = order.items.map((i: OrderItem) => ({
         product: products.find((p: Product) => p.id === i.productId),
-        count: i.count,
+        amount: i.amount,
       }))
       setOrder(order)
       setCartItems(cartItems)
