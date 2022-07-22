@@ -1,0 +1,20 @@
+name: End-to-end tests
+
+on: [pull_request]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: End-to-end Testing
+        uses: cypress-io/github-action@v4.1.0
+        with:
+          install-command: npm ci --legacy-peer-deps
+          browser: chrome
+          headed: true
+          build: npm run build
+          start: npm run start
+          wait-on: 'http://localhost:3000'
