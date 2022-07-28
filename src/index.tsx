@@ -12,13 +12,22 @@ axios.interceptors.response.use(
     return response
   },
   function (error) {
-    if (error?.response?.status === 400) {
-      alert(error.response.data?.data)
+    const status = error?.response?.status
+
+    if (status === 400) {
+      showErrorMessage(status, error.response.data?.data)
+    }
+    if ([401, 403].includes(status)) {
+      showErrorMessage(status, error.response.data?.message)
     }
 
     return Promise.reject(error?.response ?? error)
   }
 )
+
+const showErrorMessage = (status: number, message: string) => {
+  alert(`${status}: ${message}`)
+}
 
 ReactDOM.render(
   <React.StrictMode>

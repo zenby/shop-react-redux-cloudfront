@@ -17,7 +17,9 @@
     "cloudfront:build:deploy:nc": "npm run client:build:deploy:nc && npm run cloudfront:invalidateCache",
     "cloudfront:update:build:deploy": "npm run cloudfront:setup && npm run cloudfront:build:deploy",
     "cloudfront:update:build:deploy:nc": "npm run cloudfront:setup && npm run cloudfront:build:deploy:nc",
-    "test": "react-scripts test",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "react-scripts test --watchAll=false",
+    "test:e2e": "start-server-and-test 3000 'cypress run --spec \"cypress/e2e/**.cy.ts\"'",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -53,7 +55,9 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
-    "prettier": "^2.6.2"
+    "cypress": "^10.3.1",
+    "prettier": "^2.6.2",
+    "start-server-and-test": "^1.14.0"
   },
   "eslintConfig": {
     "extends": "react-app"
