@@ -1,6 +1,13 @@
 name: End-to-end tests
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - 'task-**'
+      - main
 
 jobs:
   cypress-run:

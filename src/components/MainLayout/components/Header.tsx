@@ -47,7 +47,7 @@ export default function Header() {
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
           <Link className={classes.homeLink} to="/">
-            NFT digital religion market (Task 7)
+            NFT digital religion market (Task 8)
           </Link>
         </Typography>
 
