@@ -1,4 +1,4 @@
-const bffUrl = 'http://zenby-bff-api-dev.eba-ec3kquta.eu-central-1.elasticbeanstalk.com'
+const bffUrl = 'https://vy0lfpdap9.execute-api.eu-central-1.amazonaws.com'
 const importServiceUrl = 'https://omdfergjvk.execute-api.eu-central-1.amazonaws.com/dev'
 // const cartServiceUrl = 'http://zenby-cart-api-develop.eu-central-1.elasticbeanstalk.com/api/profile/cart'
 
