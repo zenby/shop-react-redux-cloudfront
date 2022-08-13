@@ -76,10 +76,15 @@ export default function PageProductForm() {
   const [product, setProduct] = useState<Product | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
-  const onSubmit = (values: FormikValues) => {
+  const onSubmit = async (values: FormikValues) => {
     const formattedValues = ProductSchema.cast(values)
     const productToSave = id ? {...ProductSchema.cast(formattedValues), id} : formattedValues
-    axios.put(`${API_PATHS.bff}/products`, productToSave).then(() => history.push('/admin/products'))
+    if (!productToSave?.image) {
+      const {url} = await fetch('https://source.unsplash.com/random?sig=0&religion,cross')
+
+      ;(productToSave as Product).image = url
+    }
+    axios.post(`${API_PATHS.bff}/products`, productToSave).then(() => history.push('/admin/products'))
   }
 
   useEffect(() => {
